@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* CSS class */
+      .btn {
+        all: unset;
+        background-color: dodgerblue;
+        color: white;
+        padding: 8px 16px 8px 16px;
+        font-family: sans-serif;
+        border-radius: 4px;
+      }
+      /* Psuedo class */
+      .btn:hover {
+        background-color: rgb(11, 64, 199);
+      }
+      .btn:active {
+        border: 5px solid rgb(79, 166, 253);
+      }
+
+      .btn.success {
+        background-color: green;
+      }
+      .btn.success:hover {
+        background-color: mediumseagreen;
+      }
+      .btn.success:active {
+        border: 5px solid green;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn">Button</button>
+    <button class="btn success">Success</button>
+  </body>
+</html>

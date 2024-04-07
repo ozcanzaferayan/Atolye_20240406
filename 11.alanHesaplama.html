@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="sonuc"></div>
+    <form method="post" onsubmit="alanHesapla(event)">
+      <input type="number" name="kisaKenar" placeholder="Kısa kenar" />
+      <input type="number" name="uzunKenar" placeholder="Uzun kenar" />
+      <button>Alan hesapla</button>
+    </form>
+
+    <script>
+      function alanHesapla(e) {
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(e.target).entries());
+        const kisaKenar = data.kisaKenar;
+        const uzunKenar = data.uzunKenar;
+        const alan = kisaKenar * uzunKenar;
+        const sonuc = document.getElementById("sonuc");
+        sonuc.innerHTML = "<h1>" + alan + "m2</h1>";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="sonuc"></div>
+    <form method="post" onsubmit="karesiniHesapla(event)">
+      <input type="text" name="sayi" placeholder="Sayı giriniz" />
+      <button>Karesini hesapla</button>
+    </form>
+
+    <script>
+      function karesiniHesapla(e) {
+        // Formun varsayılan davranışını engeller
+        // Varsayılan davranış formun sayfayı yenilemesidir
+        e.preventDefault();
+        // Bu aynı document.getElementById('form') ile aynı işi yapar
+        const form = e.target;
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+        const sayi = data.sayi;
+        const karesi = sayi * sayi;
+        const sonuc = document.getElementById("sonuc");
+        sonuc.innerHTML = "<h1>" + karesi + "</h1>";
+      }
+    </script>
+  </body>
+</html>
